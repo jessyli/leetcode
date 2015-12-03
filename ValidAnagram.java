@@ -1,3 +1,10 @@
+// Given two strings s and t, write a function to determine if t is an anagram of s.
+
+// For example,
+// s = "anagram", t = "nagaram", return true.
+// s = "rat", t = "car", return false.
+
+
 // 1 sort two array and compare whether eqaul. time complexity O(nlogn)
 // 2 change char array to int array and minus get a int array eqaul to 0. time complexity O(n)
 public class Solution {
