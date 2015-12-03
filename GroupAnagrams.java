@@ -1,13 +1,13 @@
-//Given an array of strings, group anagrams together.
+Given an array of strings, group anagrams together.
 
-// For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
-// Return:
+For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
+Return:
 
-// [
-//   ["ate", "eat","tea"],
-//   ["nat","tan"],
-//   ["bat"]
-// ]
+[
+  ["ate", "eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]
 
 public class Solution {
     public List<String> anagrams(String[] strs) {
