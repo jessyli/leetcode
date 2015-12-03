@@ -9,6 +9,10 @@ Write the code that will take a string and make this conversion given a number o
 string convert(string text, int nRows);
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
+between every two is 2 * nRow – 2, and for the middle say i-th rows, the difference between every two is either 2 * nRow – 2 – 2 * i
+
+time complexity O(n)
+
 public class Solution {
     public String convert(String s, int numRows) {
         if(numRows==1){
