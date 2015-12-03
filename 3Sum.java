@@ -9,6 +9,7 @@ The solution set must not contain duplicate triplets.
     (-1, 0, 1)
     (-1, -1, 2)
     
+time complexity O(n^2)
     
 public class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
