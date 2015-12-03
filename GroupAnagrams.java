@@ -1,3 +1,14 @@
+//Given an array of strings, group anagrams together.
+
+// For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
+// Return:
+
+// [
+//   ["ate", "eat","tea"],
+//   ["nat","tan"],
+//   ["bat"]
+// ]
+
 public class Solution {
     public List<String> anagrams(String[] strs) {
         List<String> result = new ArrayList<String>();
