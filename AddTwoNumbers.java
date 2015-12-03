@@ -3,38 +3,37 @@ You are given two linked lists representing two non-negative numbers. The digits
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution:
-    # @param {ListNode} l1
-    # @param {ListNode} l2
-    # @return {ListNode}
-    def addTwoNumbers(self, l1, l2):
-        if (l1==None):
-            return l2
-        if (l2==None):
-            return l1
-        if (l1==None) and (l2==None):
-            return None
-        head = ListNode(0)
-        p = head
-        carryon = 0
-        while l1 or l2 or carryon:
-            if l1:
-                head.val = l1.val+head.val
-                l1=l1.next
-            if l2:
-                head.val = l2.val+head.val
-                l2=l2.next
-            
-            carryon = head.val/10
-            head.val = head.val%10
-            if carryon or l1 or l2:
-                head.next = ListNode(carryon)
-                head = head.next
-            
-        return p
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode newhead = new ListNode(0);
+        int carry = 0;
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        ListNode p3 = newhead;
+        while(p1!=null || p2!=null){
+            if(p1!=null){
+                carry = p1.val+carry;
+                p1 = p1.next;
+            }
+            if(p2!=null){
+                carry = carry+p2.val;
+                p2 = p2.next;
+            }
+            p3.next = new ListNode(carry%10);
+            p3 = p3.next;
+            carry = carry/10;
+        }
+        if(carry==1){
+            p3.next = new ListNode(1);
+        }
+        return newhead.next;
+    }
+}
