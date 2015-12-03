@@ -5,24 +5,50 @@ For example, given n = 3, a solution set is:
 "((()))", "(()())", "(())()", "()(())", "()()()"
 
 public class Solution {
-    public List<String> generateParenthesis(int n) {
-        if(n<=0){
-			return null;
-		}
-		ArrayList<String> result = new ArrayList<String>();
-		getpair(result, "", n, n);
-		return result;
+    /**
+     * @param s A string
+     * @return whether the string is a valid parentheses
+     */
+    public boolean isValidParentheses(String s) {
+        // Write your code here
+        if(s==null || s.length()==0){
+            return false;
+        }
+        Stack<Character> stack = new Stack<Character>();
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i)=='('||s.charAt(i)=='{'||s.charAt(i)=='['){
+                stack.push(s.charAt(i));
+            }
+            if(s.charAt(i)==')'||s.charAt(i)=='}'||s.charAt(i)==']'){
+                if(stack.size()==0){
+                    return false;
+                }
+                if(stack.peek()=='('&&s.charAt(i)==')'){
+                    stack.pop();
+                    continue;
+                }
+                if(stack.peek()=='{'&&s.charAt(i)=='}'){
+                    stack.pop();
+                    continue;
+                }
+                if(stack.peek()=='['&&s.charAt(i)==']'){
+                    stack.pop();
+                    continue;
+                }
+                else{
+                    return false;
+                }
+            }
+            
+        }
+        if(stack.size()==0){
+            return true;
+        }
+        else{
+            return false;
+        }
         
-    }
-	public void getpair(ArrayList<String> result, String string, int left, int right){
-		if(left>right||left<0||right<0){
-			return;
-		}
-		if(left==0&&right==0){
-			result.add(string);
-			return;
-		}
-		getpair(result, string+"(", left-1, right);
-		getpair(result, string+")", left, right-1);
+        
+       
     }
 }
