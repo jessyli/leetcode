@@ -4,6 +4,8 @@ Given an array S of n integers, find three integers in S such that the sum is cl
 
     The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
     
+time complexity O(n^2)
+
 public class Solution {
     public int threeSumClosest(int[] nums, int target) {
         int min = Integer.MAX_VALUE ;
