@@ -10,6 +10,7 @@ string convert(string text, int nRows);
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
 between every two is 2 * nRow – 2, and for the middle say i-th rows, the difference between every two is either 2 * nRow – 2 – 2 * i
+or 2 * i in turn
 
 time complexity O(n)
 
