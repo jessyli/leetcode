@@ -1,13 +1,14 @@
-// Given a collection of intervals, merge all overlapping intervals.
+Given a collection of intervals, merge all overlapping intervals.
 
-// For example,
-// Given [1,3],[2,6],[8,10],[15,18],
-// return [1,6],[8,10],[15,18].
+For example,
+Given [1,3],[2,6],[8,10],[15,18],
+return [1,6],[8,10],[15,18].
 
 
-//The key to solve this problem is defining a Comparator first to sort the arraylist of Intevals. And then merge some intervals.
-//time complexity O(nLogn) which is for sorting
-// [1,4][1,4]   [1,4][4,5]  [1,5][2,3] 
+The key to solve this problem is defining a Comparator first to sort the arraylist of Intevals. And then merge some intervals.
+time complexity O(nLogn) which is for sorting
+[1,4][1,4]   [1,4][4,5]  [1,5][2,3] 
+
 public class Solution {
     public List<Interval> merge(List<Interval> intervals) {
         if(intervals==null || intervals.size()<=1){
