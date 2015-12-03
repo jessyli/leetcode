@@ -1,6 +1,7 @@
 
 //The key to solve this problem is defining a Comparator first to sort the arraylist of Intevals. And then merge some intervals.
 //time complexity O(nLogn) which is for sorting
+// [1,4][1,4]   [1,4][4,5]  [1,5][2,3] 
 public class Solution {
     public List<Interval> merge(List<Interval> intervals) {
         if(intervals==null || intervals.size()<=1){
