@@ -11,6 +11,7 @@ public class Solution {
         int[][] b = transform1(matrix,n);
         int[][] c= transform2(b,n);
     }
+    //transform by diagonal
     public static int[][] transform1(int[][] matrix, int n){
 		for(int i=0; i<n; i++){
 			for(int j=i+1; j<n; j++){
@@ -24,6 +25,7 @@ public class Solution {
 		}
 		return matrix;
 	}
+	//transform by mid line
 	public static int[][] transform2(int[][] matrix, int n){
 		for(int j=0; j<n/2; j++){
 			for(int i=0; i<n; i++){
