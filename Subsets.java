@@ -17,6 +17,9 @@ If nums = [1,2,3], a solution is:
   []
 ]
 
+Given a set S of n distinct integers, there is a relation between Sn and Sn-1. 
+The subset of Sn-1 is the union of {subset of Sn-1} and {each element in Sn-1 + one more element}. 
+
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
