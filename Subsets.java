@@ -31,13 +31,16 @@ public class Solution {
         Arrays.sort(S);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         for(int i=0; i<S.length; i++){
+          //get sets that are already in result
             List<List<Integer>> temp = new ArrayList<List<Integer>>();
             for(List<Integer> a : result){
                 temp.add(new ArrayList<Integer>(a));
             }
+            //add S[i] to existing sets
             for(List<Integer> a : temp){
                 a.add(S[i]);
             }
+            //add S[i] only as a set
             List<Integer> single = new ArrayList<Integer>();
             single.add(S[i]);
             temp.add(single);
