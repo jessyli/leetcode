@@ -9,6 +9,7 @@ Given an array where elements are sorted in ascending order, convert it to a hei
  *     TreeNode(int x) { val = x; }
  * }
  */
+//  时间复杂度还是一次树遍历O(n)，总的空间复杂度是栈空间O(logn)加上结果的空间O(n)，额外空间是O(logn)，总体是O(n)
 public class Solution {
     public TreeNode sortedArrayToBST(int[] num) {
         if(num==null||num.length==0){
