@@ -8,7 +8,7 @@ Both the left and right subtrees must also be binary search trees.
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 
 /**
- * Definition for binary tree
+ * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
  *     TreeNode left;
@@ -17,27 +17,19 @@ confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on
  * }
  */
 public class Solution {
-    private int lastvalue = Integer.MIN_VALUE;
-	private boolean firstnode = true;
-	public  boolean isValidBST(TreeNode root){
-		if(root==null){
-			return true;
-		}
-		if(!isValidBST(root.left)){
-			return false;
-		}
-		
-		if(!firstnode && lastvalue>=root.val){
-			return false;
-		}
-		firstnode=false;
-		lastvalue=root.val;
-			
-		if(!isValidBST(root.right)){
-			return false;
-		}
-		
-	return true;
-	
-	}
+    public boolean isValidBST(TreeNode root) {
+        return isValidBST(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
+    }
+    public boolean isValidBST(TreeNode p, double min, double max){
+    if(p==null) 
+        return true;
+ 
+    if(p.val <= min || p.val >= max)
+        return false;
+ 
+    return isValidBST(p.left, min, p.val) && isValidBST(p.right, p.val, max);
 }
+}
+
+
+ 
